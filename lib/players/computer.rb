@@ -30,15 +30,12 @@ module Players
     end
 
     def block_or_win?(board)
-      WIN_COMBINATIONS.detect do |combo|
-          x_count = combo.count{|i| board.cells[i] == "X"}
-          o_count = combo.count{|i| board.cells[i] == "O"}
-          if x_count == 2 || o_count == 2
-            block_or_win_space = combo.detect{|i| combo[i] == " "}
-            # binding.pry
-          end
-        return block_or_win_space
-      end
+      block_or_win_space = nil
+      target_combo = WIN_COMBINATIONS.detect do |combo|
+        combo.count{|i| board.cells[i] == "X"} == 2 or
+        combo.count{|i| board.cells[i] == "O"} == 2
+        end
+      target_combo.detect{|i| combo[i] == " "}
     end
 
     def take_center_if_open(board)
