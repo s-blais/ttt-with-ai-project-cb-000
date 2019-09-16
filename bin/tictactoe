@@ -25,5 +25,7 @@ input = gets.strip
    end
  end
 
+ puts "Would you like to play again?"
+
 # game = Game.new
 # game.play
