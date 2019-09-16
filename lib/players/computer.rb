@@ -24,9 +24,9 @@ module Players
     end
 
     def move(board)
-      if block_or_win?(board)
-      else find_free_spaces(board).sample
-      end
+      # if block_or_win?(board)
+      find_free_spaces(board).sample
+      
     end
 
     def block_or_win?(board)
