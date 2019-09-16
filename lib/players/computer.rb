@@ -37,7 +37,7 @@ module Players
         combo.count{|i| board.cells[i] == "X"} == 2 or
         combo.count{|i| board.cells[i] == "O"} == 2
         end
-      if @block_or_win_combo != []
+      if @block_or_win_combo.length == 3
         @block_or_win_combo.detect{|i| board.cells[i] == " "}
       end
     end
