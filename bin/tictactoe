@@ -28,11 +28,14 @@ def start
    end
  end
 
- start
+start
 
- puts "\nWould you like to play again, Y/N?"
- input = gets.strip.upcase
- start if input == "Y"
+keep_playing = "Y"
+while keep_playing == "Y"
+  puts "\nWould you like to play again, Y/N?"
+  input = gets.strip.upcase
+  start if input == "Y"
+end
 
 # game = Game.new
 # game.play
