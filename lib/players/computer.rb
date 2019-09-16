@@ -30,7 +30,7 @@ module Players
     end
 
     def block_or_win?(board)
-      WIN_COMBINATIONS.each do |combo|
+      WIN_COMBINATIONS.detect do |combo|
           x_count = combo.count{|i| board.cells[i] == "X"}
           o_count = combo.count{|i| board.cells[i] == "O"}
           if x_count == 2 || o_count == 2
