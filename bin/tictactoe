@@ -6,4 +6,4 @@ puts "Welcome to Tic Tac Toe"
 puts "The first player is X"
 
 Game.new
-game.turn
+turn
