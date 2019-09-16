@@ -35,7 +35,7 @@ module Players
         combo.count{|i| board.cells[i] == "X"} == 2 or
         combo.count{|i| board.cells[i] == "O"} == 2
         end
-      target_combo.detect{|i| combo[i] == " "}
+      target_combo.find{|i| combo[i] == " "}
     end
 
     def take_center_if_open(board)
