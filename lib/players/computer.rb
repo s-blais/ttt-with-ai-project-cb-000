@@ -27,7 +27,7 @@ module Players
     def move(board)
       if !board.taken?(5)
         5
-      elsif block_or_win?(board)
+      # elsif block_or_win?(board)
       else find_free_spaces(board).sample
       end
     end
