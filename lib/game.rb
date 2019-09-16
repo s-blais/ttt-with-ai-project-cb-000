@@ -70,30 +70,4 @@ class Game
       end
   end
 
-  def start
-    puts "How many humans will be playing, 0, 1, or 2?"
-    input = gets.strip
-     if input == "2"
-       game = Game.new
-       game.play
-     end
-     if input == "0"
-       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"))
-       game.play
-     end
-     if input == "1"
-       puts "Human, enter X to go first, or enter O to go second;"
-       input = gets.strip.upcase
-       if input == "X"
-         game = Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O"))
-         game.play
-       elsif input == "O"
-         game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"))
-         game.play
-       end
-     end
-   end
-
-
-
 end
