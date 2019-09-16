@@ -24,9 +24,13 @@ module Players
     end
 
     def move(board)
+      if !taken?(5)
+        5
+      else
       # if block_or_win?(board)
       find_free_spaces(board).sample
-      
+    end
+
     end
 
     def block_or_win?(board)
@@ -40,6 +44,7 @@ module Players
     end
 
     def take_center_if_open(board)
+      5 if !taken?(5)
     end
 
 
