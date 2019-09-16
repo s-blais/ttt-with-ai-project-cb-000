@@ -36,11 +36,3 @@ module Players
   end
 
 end
-
-# for AI play:
-# first check if there are any rows or columns with two of the same token and a free space. if so, play that free space. otherwise, if center space is open, play center space. otherwise, play any open spot. Use WIN_COMBINATIONS something like:
-
-# if (win_combination.count { |index| @board[index] == "X" }) == 2
-
-# open space array = collect indices of values == " "
-# choose from the open space array
