@@ -40,25 +40,22 @@ module Players
         combo.count{|i| board.cells[i] == "O"} == 2
         end
       if @block_or_win_combo != []
-        @block_or_win_combo.detect{|i| combo[i] == " "}
+        @block_or_win_combo.detect{|i| board.cells[i] == " "}
       end
     end
 
 
-
-
-
-      block_or_win_space = nil
-      target_combo = WIN_COMBINATIONS.find do |combo|
-        combo.count{|i| board.cells[i] == "X"} == 2 or
-        combo.count{|i| board.cells[i] == "O"} == 2
-        end
-      target_combo.find{|i| combo[i] == " "}
-    end
-
-    def take_center_if_open(board)
-      5 if !taken?(5)
-    end
+    #   block_or_win_space = nil
+    #   target_combo = WIN_COMBINATIONS.find do |combo|
+    #     combo.count{|i| board.cells[i] == "X"} == 2 or
+    #     combo.count{|i| board.cells[i] == "O"} == 2
+    #     end
+    #   target_combo.find{|i| combo[i] == " "}
+    # end
+    #
+    # def take_center_if_open(board)
+    #   5 if !taken?(5)
+    # end
 
 
   end
