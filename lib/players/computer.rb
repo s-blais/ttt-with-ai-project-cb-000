@@ -19,7 +19,7 @@ module Players
     end
 
     def block_or_win?(board)
-      WIN_COMBINATIONS.each do |combo|
+      game.WIN_COMBINATIONS.each do |combo|
           if (combo.count{|i| board.cells[i] == "X"}) == 2
             combo.index(" ")
           elsif (combo.count{|i| board.cells[i] == "O"}) == 2
