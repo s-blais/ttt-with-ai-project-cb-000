@@ -31,14 +31,12 @@ module Players
 
     def block_or_win?(board)
       WIN_COMBINATIONS.each do |combo|
-          if (combo.count{|i| board.cells[i] == "X"}) == 2
+          x_count = combo.count{|i| board.cells[i] == "X"}
+          o_count = combo.count{|i| board.cells[i] == "O"}
+          if x_count == 2 || o_count == 2
             combo.index(" ")
-          elsif (combo.count{|i| board.cells[i] == "O"}) == 2
-            combo.index(" ")
-          # else
-          #   find_free_spaces(board).sample
           end
-        end
+      end
     end
 
     def take_center_if_open(board)
