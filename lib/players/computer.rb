@@ -24,7 +24,7 @@ module Players
     end
 
     def move(board)
-      if !taken?(5)
+      if !board.taken?(5)
         5
       else
       # if block_or_win?(board)
