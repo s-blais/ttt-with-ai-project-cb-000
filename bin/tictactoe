@@ -34,8 +34,10 @@ keep_playing = "Y"
 while keep_playing == "Y"
   puts "\nWould you like to play again, Y/N?"
   keep_playing = gets.strip.upcase
-  keep_playing == "Y" ? start : break
+  start
 end
+
+break
 
 # game = Game.new
 # game.play
