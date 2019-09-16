@@ -31,8 +31,6 @@ module Players
       end
     end
 
-    end
-
     def block_or_win?(board)
       @block_or_win_combo = []
       @block_or_win_combo = WIN_COMBINATIONS.detect do |combo|
