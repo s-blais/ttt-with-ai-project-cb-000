@@ -36,6 +36,7 @@ module Players
           if x_count == 2 || o_count == 2
             combo.index(" ")
           end
+        break  
       end
     end
 
