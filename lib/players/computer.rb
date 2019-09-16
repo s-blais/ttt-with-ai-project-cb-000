@@ -1,7 +1,8 @@
 module Players
   class Computer < Player
 
-    attr_reader :board, :free_spaces, :block_or_win_combo
+    attr_reader :board, :free_spaces
+    attr_accessor :block_or_win_index
 
     WIN_COMBINATIONS = [
       [0,1,2], # top row
@@ -32,13 +33,12 @@ module Players
     end
 
     def block_or_win?(board)
-      @block_or_win_combo = []
-      @block_or_win_combo = WIN_COMBINATIONS.detect do |combo|
-        (combo.count{|i| board.cells[i] == "X"}) == 2 or
-        (combo.count{|i| board.cells[i] == "O"}) == 2
+      @block_or_win_index = nil
+      WIN_COMBINATIONS.detect do |combo|
+        if combo.count{|i| board.cells[i] == "X"} == 2
+          @block_or_win_index = combo.detect {|i| board.cells[i] == " "}.to_i
         end
-      if @block_or_win_combo.to_a.length == 3
-        @block_or_win_combo.to_a.detect{|i| board.cells[i] == " "}
+        return @block_or_win_index + 1
       end
     end
 
