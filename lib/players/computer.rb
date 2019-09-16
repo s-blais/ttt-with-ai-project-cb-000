@@ -38,7 +38,7 @@ module Players
         if combo.count{|i| board.cells[i] == "X"} == 2
           @block_or_win_index = combo.detect {|i| board.cells[i] == " "}.to_i
         end
-        return @block_or_win_index + 1
+        return (@block_or_win_index) + 1
       end
     end
 
