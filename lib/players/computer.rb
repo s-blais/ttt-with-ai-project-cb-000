@@ -37,7 +37,7 @@ module Players
             block_or_win_space = combo.detect{|i| combo[i] == " "}
             # binding.pry
           end
-        block_or_win_space
+        return block_or_win_space
       end
     end
 
