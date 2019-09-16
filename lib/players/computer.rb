@@ -35,7 +35,7 @@ module Players
           o_count = combo.count{|i| board.cells[i] == "O"}
           if x_count == 2 || o_count == 2
             block_or_win_space = combo.detect{|i| combo[i] == " "}
-            binding.pry
+            # binding.pry
           end
         block_or_win_space
       end
