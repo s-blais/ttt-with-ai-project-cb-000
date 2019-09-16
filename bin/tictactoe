@@ -9,6 +9,10 @@ input = gets.strip
    game = Game.new
    game.play
  end
+ if input == "0"
+   game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"))
+   game.play
+ end
 
 # game = Game.new
 # game.play
