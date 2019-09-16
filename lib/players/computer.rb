@@ -13,11 +13,20 @@ module Players
     end
 
     def move(board)
-      # no-AI purely random move:
-      find_free_spaces(board).sample
+      if block_or_win?(board)
+      else find_free_spaces(board).sample
     end
 
-    def block_or_win(board)
+    def block_or_win?(board)
+      WIN_COMBINATIONS.each do |combo|
+          if (combo.count{|i| board.cells[i] == "X"}) == 2
+            combo.index(" ")
+          elsif (combo.count{|i| board.cells[i] == "O"}) == 2
+            combo.index(" ")
+          # else
+          #   find_free_spaces(board).sample
+          end
+        end
     end
 
     def take_center_if_open(board)
