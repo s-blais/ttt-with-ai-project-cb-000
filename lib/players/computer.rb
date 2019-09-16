@@ -1,7 +1,7 @@
 module Players
   class Computer < Player
 
-    attr_reader :board, :free_spaces
+    attr_reader :board, :free_spaces, :block_or_win_combo
 
     WIN_COMBINATIONS = [
       [0,1,2], # top row
@@ -27,14 +27,27 @@ module Players
       if !board.taken?(5)
         5
       else
-      # if block_or_win?(board)
+      if block_or_win?(board)
       find_free_spaces(board).sample
     end
 
     end
 
     def block_or_win?(board)
-      target_combo = []
+      @block_or_win_combo = []
+      @block_or_win_combo = WIN_COMBINATIONS.detect do |combo|
+        combo.count{|i| board.cells[i] == "X"} == 2 or
+        combo.count{|i| board.cells[i] == "O"} == 2
+        end
+      if @block_or_win_combo != []
+        @block_or_win_combo.detect{|i| combo[i] == " "}
+      end
+    end
+
+
+
+
+
       block_or_win_space = nil
       target_combo = WIN_COMBINATIONS.find do |combo|
         combo.count{|i| board.cells[i] == "X"} == 2 or
