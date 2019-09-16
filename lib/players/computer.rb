@@ -31,7 +31,7 @@ module Players
 
     def block_or_win?(board)
       block_or_win_space = nil
-      target_combo = WIN_COMBINATIONS.detect do |combo|
+      target_combo = WIN_COMBINATIONS.find do |combo|
         combo.count{|i| board.cells[i] == "X"} == 2 or
         combo.count{|i| board.cells[i] == "O"} == 2
         end
