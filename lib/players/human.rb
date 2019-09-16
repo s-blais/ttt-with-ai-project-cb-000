@@ -4,7 +4,7 @@ module Players
     attr_reader :board
 
     def move(board)
-      puts "Player #{game.current_player.token}, please enter 1-9:"
+      puts "Player #{current_player.token}, please enter 1-9:"
       input = gets.strip
     end
 
