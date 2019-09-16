@@ -37,10 +37,9 @@ module Players
       WIN_COMBINATIONS.detect do |combo|
         if combo.select{|i| board.cells[i] == "X"}.length == 2
           @block_or_win_index = (combo.detect {|i| board.cells[i] == " "}).to_i
-          return (@block_or_win_index) + 1
         end
-
       end
+      return (@block_or_win_index) + 1 if @block_or_win_index != nil
     end
 
 
