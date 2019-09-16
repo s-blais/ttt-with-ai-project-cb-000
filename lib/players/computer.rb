@@ -26,21 +26,21 @@ module Players
 
     def move(board)
       if !board.taken?(5)
-        5
+        "5"
       # elsif block_or_win?(board)
       else find_free_spaces(board).sample
       end
     end
 
-    def block_or_win?(board)
-      @block_or_win_index = nil
-      WIN_COMBINATIONS.detect do |combo|
-        if combo.select{|i| board.cells[i] == "X"}.length == 2
-          @block_or_win_index = (combo.detect {|i| board.cells[i] == " "}).to_i
-        end
-      end
-      return (@block_or_win_index) + 1 if @block_or_win_index != nil
-    end
+    # def block_or_win?(board)
+    #   @block_or_win_index = nil
+    #   WIN_COMBINATIONS.detect do |combo|
+    #     if combo.select{|i| board.cells[i] == "X"}.length == 2
+    #       @block_or_win_index = (combo.detect {|i| board.cells[i] == " "}).to_i
+    #     end
+    #   end
+    #   return (@block_or_win_index) + 1 if @block_or_win_index != nil
+    # end
 
 
     #   block_or_win_space = nil
