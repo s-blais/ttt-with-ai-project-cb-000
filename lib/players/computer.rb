@@ -34,8 +34,8 @@ module Players
     def block_or_win?(board)
       @block_or_win_combo = []
       @block_or_win_combo = WIN_COMBINATIONS.detect do |combo|
-        combo.count{|i| board.cells[i] == "X"} == 2 or
-        combo.count{|i| board.cells[i] == "O"} == 2
+        (combo.count{|i| board.cells[i] == "X"}) == 2 or
+        (combo.count{|i| board.cells[i] == "O"}) == 2
         end
       if @block_or_win_combo.to_a.length == 3
         @block_or_win_combo.to_a.detect{|i| board.cells[i] == " "}
