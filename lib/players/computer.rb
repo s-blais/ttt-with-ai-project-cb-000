@@ -34,7 +34,7 @@ module Players
           x_count = combo.count{|i| board.cells[i] == "X"}
           o_count = combo.count{|i| board.cells[i] == "O"}
           if x_count == 2 || o_count == 2
-             return combo.detect(|i| combo[i] == " ")
+             return combo.detect{|i| combo[i] == " "}
           end
         #break
       end
