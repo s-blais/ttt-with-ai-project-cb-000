@@ -35,8 +35,8 @@ module Players
     def block_or_win?(board)
       @block_or_win_index = nil
       WIN_COMBINATIONS.detect do |combo|
-        if combo.count{|i| board.cells[i] == "X"} == 2
-          @block_or_win_index = combo.detect {|i| board.cells[i] == " "}.to_i
+        if combo.select{|i| board.cells[i] == "X"}.length == 2
+          @block_or_win_index = (combo.detect {|i| board.cells[i] == " "}).to_i
         end
         return (@block_or_win_index) + 1
       end
