@@ -30,7 +30,7 @@ def start
 
  start
 
- puts "Would you like to play again?"
+ puts "\nWould you like to play again?"
 
 # game = Game.new
 # game.play
